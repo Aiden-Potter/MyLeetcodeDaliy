@@ -20,6 +20,19 @@ public:
         return maxPrice;
     }
     */
+    //! 遍历一遍，找最大利润，我们需要找到最小的谷之后的最大的峰
+    int maxProfit(vector<int>& prices) {
+        int minprice = 0x3f3f3f3f;
+        int maxprofit = 0;
+        for (int i = 0; i < prices.size();++i) {
+            if (prices[i] < minprice)
+                minprice = prices[i];
+            else if (prices[i] - minprice > maxprofit)
+                maxprofit = prices[i]-minprice;
+        }
+        return maxprofit;
+
+    }
 };
 int main()
 {
