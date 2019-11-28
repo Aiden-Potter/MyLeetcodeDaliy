@@ -20,7 +20,7 @@ public:
         return maxPrice;
     }
     */
-    //! ����һ�飬���������������Ҫ�ҵ���С�Ĺ�֮������ķ�
+    //! 遍历一遍，找最大利润，我们需要找到最小的谷之后的最大的峰
     int maxProfit(vector<int>& prices) {
         int minprice = 0x3f3f3f3f;
         int maxprofit = 0;
