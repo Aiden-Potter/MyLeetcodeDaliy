@@ -4,7 +4,7 @@ using namespace std;
 class Solution {
 public:
 
-    //! ±éÀúÒ»±é£¬ÕÒ×î´óÀûÈó£¬ÎÒÃÇĞèÒªÕÒµ½×îĞ¡µÄ¹ÈÖ®ºóµÄ×î´óµÄ·å
+    //! éå†ä¸€éï¼Œæ‰¾æœ€å¤§åˆ©æ¶¦ï¼Œæˆ‘ä»¬éœ€è¦æ‰¾åˆ°æœ€å°çš„è°·ä¹‹åçš„æœ€å¤§çš„å³°
     int maxProfit(vector<int>& prices) {
         int minprice = 0x3f3f3f3f;
         int maxprofit = 0;
@@ -41,7 +41,7 @@ public:
 	maxProfit +=tmpProfit;
 	return maxProfit;
      }
-	//! ¸ü¼òµ¥µÄ½â·¨
+	//! æ›´ç®€å•çš„è§£æ³•æ˜¯ä¼˜åŒ–  
 
 
 	int maxProfit3(vector<int>& prices) {
