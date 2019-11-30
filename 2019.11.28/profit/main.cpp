@@ -1,26 +1,10 @@
-ï»¿#include <iostream>
+#include <iostream>
 #include <vector>
 using namespace std;
 class Solution {
 public:
-	/*
-    int maxProfit(vector<int>& prices) {
-        int maxPrice=0;
-        int money =0;
-        if(prices.size() < 2) return 0;
-        for(int i =1 ; i<prices.size();++i)
-        {
-            for(int j =0;j<i;++j)
-            {
-                money = prices[i] - prices[j];
-                if(money>maxPrice)
-                maxPrice = money;
-            }
-        }
-        return maxPrice;
-    }
-    */
-    //! éå†ä¸€éï¼Œæ‰¾æœ€å¤§åˆ©æ¶¦ï¼Œæˆ‘ä»¬éœ€è¦æ‰¾åˆ°æœ€å°çš„è°·ä¹‹åçš„æœ€å¤§çš„å³°
+
+    //! ±éÀúÒ»±é£¬ÕÒ×î´óÀûÈó£¬ÎÒÃÇĞèÒªÕÒµ½×îĞ¡µÄ¹ÈÖ®ºóµÄ×î´óµÄ·å
     int maxProfit(vector<int>& prices) {
         int minprice = 0x3f3f3f3f;
         int maxprofit = 0;
@@ -33,12 +17,50 @@ public:
         return maxprofit;
 
     }
+     int maxProfit2(vector<int> & prices)
+     {
+     	vector<int> profit;
+
+	for(auto i=prices.cbegin();i!=prices.cend()-1;++i)
+	{
+		profit.push_back(*(i+1) - *(i));
+	}
+	int maxProfit=0;
+	int tmpProfit=0;
+	for(auto a = profit.cbegin();a!=profit.cend();++a)
+	{
+
+		if(*a >= 0)
+		tmpProfit += *a;
+		else
+		{
+			maxProfit += tmpProfit;
+			tmpProfit=0;
+		}
+	}
+	maxProfit +=tmpProfit;
+	return maxProfit;
+     }
+	//! ¸ü¼òµ¥µÄ½â·¨
+
+
+	int maxProfit3(vector<int>& prices) {
+         int ans = 0;
+        int price;
+        for(int i = 1; i<prices.size();++i){
+            price = - prices[i-1] + prices[i];
+            if (price > 0)
+                ans += price;
+        }
+        return ans;
+    }
 };
 int main()
 {
-    vector<int> nums = {7,1,5,3,6,4};
+    vector<int> nums = {7,6,4,3,1};
     Solution s;
-    int maxprofit = s.maxProfit(nums);
+    //int maxprofit = s.maxProfit(nums);
+    int maxprofit = s.maxProfit2(nums);
     cout<<maxprofit;
     return 0;
 }
