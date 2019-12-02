@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1575278552 source:d:\github\repository\myleetcodedaliy\2019.12.2\unique\main.cpp
+	<iostream>
+	<set>
+	<vector>
+
