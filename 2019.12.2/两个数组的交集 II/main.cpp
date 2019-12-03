@@ -39,29 +39,23 @@ vector<int> intersect2(vector<int>& nums1, vector<int>& nums2) {
         }
         return answer;
 };
-vector<int> intersect3(vector<int>& nums1, vector<int>& nums2) {
-	vector<int> ln,sn;//long num ,short num
-        vector<int> result;
-        if(nums1.size()>nums2.size())
-        {
-            ln = nums1;
-            sn = nums2;
-        }else{
-            ln = nums2;
-            sn = nums1;
-        }
-        for(int i =0;i<sn.size();++i)
-        {
-            int co;
-            if((co = count(ln.begin(),ln.end(),sn[i])) != 0)
-                for(;co>0;--co){
-                    result.push_back(sn[i]);
-                    auto it = find( sn.begin(), sn.end(), sn[i] );
-                    sn.erase(it);
-                }
 
-        }
-        return result;
+//要求不一样，
+
+vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+	vector<int>rec;
+        unordered_map<int,int>map;
+        for(int i =0;i<nums1.size();i++)
+            map[nums1[i]]+=1;
+        for(int i =0;i<nums2.size();i++)
+           if(map[nums2[i]]>0)
+           {
+               rec.push_back(nums2[i]);
+               map[nums2[i]]-=1;
+           }
+
+        return rec;
+
     }
 int main()
 {
