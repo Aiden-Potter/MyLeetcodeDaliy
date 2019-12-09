@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1575851768 source:d:\github\repository\myleetcodedaliy\2019.12.9\有效的字母异位词\main.cpp
+	<iostream>
+	<string>
+	<algorithm>
+	<map>
+	<unordered_map>
+

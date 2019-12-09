@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1575853276 source:d:\github\repository\myleetcodedaliy\2019.12.9\是否为回文数\main.cpp
+	<iostream>
+	<vector>
+	<string>
+
